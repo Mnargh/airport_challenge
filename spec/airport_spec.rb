@@ -12,4 +12,13 @@ let(:plane) {double(:plane)}
      heathrow.land(plane)
      expect(heathrow.takeoff(plane)).to eq plane
    end
+
+   it "Confirms plane has taken off from airport" do
+     heathrow = Airport.new
+     heathrow.land(plane)
+     heathrow.takeoff(plane)
+     expect(heathrow.hangar.include?(plane)).to eq false
+   end
+
+   it "Plane cannot takeoff if weather is stormy"
 end
